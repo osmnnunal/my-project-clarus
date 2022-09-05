@@ -15,7 +15,7 @@ Resources:
         - Key: Name
           Value: First-CFN-Instance
       UserData: 
-        Fn::Base64: !Sub |
+        Fn::Base64: !Sub |  # aşağıdaki kodları 0 ve 1'lere dönüştürür.
           #!/bin/bash
           yum update -y
           yum install -y httpd
@@ -26,7 +26,7 @@ Resources:
           cd
           cd /var/www/html
           chmod -R 777 /var/www/html/
-          cp /home/ec2-user/my_portfolio/Project-101-kittens-carousel-static-website-ec2/static-web/* .
+          cp /home/ec2-user/my-project/Project-101-kittens-carousel-static-website-ec2/static-web/* .
           systemctl restart httpd
           systemctl enable httpd 
   

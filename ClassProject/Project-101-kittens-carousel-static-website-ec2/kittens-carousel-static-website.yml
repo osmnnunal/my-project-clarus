@@ -38,28 +38,19 @@ Resources:
         - Key: Name
           Value: !Sub Web Server of ${AWS::StackName} Stack
       UserData: 
-        Fn::Base64:
-          !Sub |
+        Fn::Base64: !Sub |
             #!/bin/bash
             yum update -y
             yum install httpd -y
-            FOLDER="https://raw.githubusercontent.com/vnczalt-17/my-projects/main/aws/projects/Project-101-kittens-carousel-static-website-ec2/static-web"
+            FOLDER="https://raw.githubusercontent.com/osmnnunal/my-project/main/ClassProject/Project-101-kittens-carousel-static-website-ec2/static-web"
             cd /var/www/html
-            wget $FOLDER/index.html  # dosyayı çeker
+            wget $FOLDER/index.html  # wget dosyayı çeker
             wget $FOLDER/cat0.jpg
             wget $FOLDER/cat1.jpg
             wget $FOLDER/cat2.jpg
             wget $FOLDER/cat3.png
             systemctl start httpd
             systemctl enable httpd      
-
-
-
-
-
-
-
-
 
 
 

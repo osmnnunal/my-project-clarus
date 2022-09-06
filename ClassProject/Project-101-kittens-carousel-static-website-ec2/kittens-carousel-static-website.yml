@@ -36,7 +36,7 @@ Resources:
         - !Ref WebServerSecurityGroup
       Tags:
         - Key: Name
-          Value: !Sub Web Server of ${AWS::StackName} Stack
+          Value: !Sub Web Server of ${AWS::StackName} Stack  # stack name ismini alıp EC2 ismini oluşturur
       UserData: 
         Fn::Base64: !Sub |
             #!/bin/bash

@@ -31,7 +31,7 @@ Resources:
   WebServerHost:
     Type: AWS::EC2::Instance
     Properties:
-      ImageId: ami-05fa00d4c63e32376
+      ImageId: ami-05fa00d4c63e32376   #ara ara kontrol et değişebiliyor.
       InstanceType: t2.micro
       KeyName: !Ref KeyName #11 satır referans
       SecurityGroupIds:
@@ -52,6 +52,7 @@ Resources:
         wget https://raw.githubusercontent.com/osmnnunal/my-project/main/ClassProject/Project-001-Roman-Numerals-Converter/templates/result.html
         cd ..
         python3 app.py
+
 Outputs:
   WebsiteURL:
     Value: !Sub

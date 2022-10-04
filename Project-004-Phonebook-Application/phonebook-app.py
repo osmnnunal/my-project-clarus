@@ -10,10 +10,10 @@ db_endpoint = open("/home/ec2-user/dbserver.endpoint", 'r', encoding='UTF-8')
 
 # Configure mysql database
 
-app.config['MYSQL_DATABASE_HOST'] = db_endpoint.readline().strip()
+app.config['MYSQL_DATABASE_HOST'] = 'zeos-db.ciok0rcuylxl.us-east-1.rds.amazonaws.com'
 app.config['MYSQL_DATABASE_USER'] = 'admin'
-app.config['MYSQL_DATABASE_PASSWORD'] = 'Please_Enter_Your_DB_Password'
-app.config['MYSQL_DATABASE_DB'] = 'clarusway_phonebook'
+app.config['MYSQL_DATABASE_PASSWORD'] = 'Eylül2022'
+app.config['MYSQL_DATABASE_DB'] = 'zeosphonebook'
 app.config['MYSQL_DATABASE_PORT'] = 3306
 db_endpoint.close()
 mysql = MySQL()
@@ -26,7 +26,7 @@ cursor = connection.cursor()
 
 def init_phonebook_db():
     phonebook_table = """
-    CREATE TABLE IF NOT EXISTS clarusway_phonebook.phonebook(
+    CREATE TABLE IF NOT EXISTS zeosphonebook.phonebook(
     id INT NOT NULL AUTO_INCREMENT,
     name VARCHAR(100) NOT NULL,
     number VARCHAR(100) NOT NULL,

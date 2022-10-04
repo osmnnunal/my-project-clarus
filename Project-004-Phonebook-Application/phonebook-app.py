@@ -6,16 +6,16 @@ from flaskext.mysql import MySQL
 app = Flask(__name__)
 
 # This "/home/ec2-user/dbserver.endpoint" file has to be created from cloudformation template and it has RDS endpoint
-db_endpoint = open("/home/ec2-user/dbserver.endpoint", 'r', encoding='UTF-8') 
+# db_endpoint = open("/home/ec2-user/dbserver.endpoint", 'r', encoding='UTF-8') 
 
 # Configure mysql database
 
 app.config['MYSQL_DATABASE_HOST'] = 'zeos-db.ciok0rcuylxl.us-east-1.rds.amazonaws.com'
 app.config['MYSQL_DATABASE_USER'] = 'admin'
-app.config['MYSQL_DATABASE_PASSWORD'] = 'Eylül2022'
+app.config['MYSQL_DATABASE_PASSWORD'] = 'Eylul2022'
 app.config['MYSQL_DATABASE_DB'] = 'zeosphonebook'
 app.config['MYSQL_DATABASE_PORT'] = 3306
-db_endpoint.close()
+# db_endpoint.close()
 mysql = MySQL()
 mysql.init_app(app) 
 connection = mysql.connect()

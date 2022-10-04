@@ -10,10 +10,10 @@ app = Flask(__name__)
 
 # Configure mysql database
 
-app.config['MYSQL_DATABASE_HOST'] = 'zeos-db.ciok0rcuylxl.us-east-1.rds.amazonaws.com'
+app.config['MYSQL_DATABASE_HOST'] = 'zeos.ciok0rcuylxl.us-east-1.rds.amazonaws.com'
 app.config['MYSQL_DATABASE_USER'] = 'admin'
-app.config['MYSQL_DATABASE_PASSWORD'] = 'Eylul2022'
-app.config['MYSQL_DATABASE_DB'] = 'zeosphonebook'
+app.config['MYSQL_DATABASE_PASSWORD'] = 'Eylul2023'
+app.config['MYSQL_DATABASE_DB'] = 'zeosphone'
 app.config['MYSQL_DATABASE_PORT'] = 3306
 # db_endpoint.close()
 mysql = MySQL()
@@ -26,7 +26,7 @@ cursor = connection.cursor()
 
 def init_phonebook_db():
     phonebook_table = """
-    CREATE TABLE IF NOT EXISTS zeosphonebook.phonebook(
+    CREATE TABLE IF NOT EXISTS zeosphone.phonebook(
     id INT NOT NULL AUTO_INCREMENT,
     name VARCHAR(100) NOT NULL,
     number VARCHAR(100) NOT NULL,
